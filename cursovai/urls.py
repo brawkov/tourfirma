@@ -26,10 +26,11 @@ from django.views.generic.base import TemplateView
 from report import views as ReportView
 
 urlpatterns = [
-    url(r'^city-autocomplete/$', ClientAutocomplete.as_view(), name='city-autocomplete',),
+    # url(r'^city-autocomplete/$', ClientAutocomplete.as_view(), name='city-autocomplete',),
 
-    url(r'^admin/', admin_site.urls),
-    path('', TemplateView.as_view(template_name='home.html'), name='home'),
+    url(r'^', admin_site.urls),
+    # url(r'^admin/', admin_site.urls),
+    # path('', TemplateView.as_view(template_name='home.html'), name='home'),
     # path('admin/', admin.site.urls),
     path('users/', include(('users.urls', 'users'))),
     path('users/', include('django.contrib.auth.urls')),

@@ -106,11 +106,11 @@ WSGI_APPLICATION = 'cursovai.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'tour_operator',
-        'USER': 'operator',
-        'PASSWORD': '12345',
-        'HOST': 'localhost',
-        'PORT': '',
+        'NAME': 'dak8eukg46hvlv',
+        'USER': 'lgjjkmxeyjtkfk',
+        'PASSWORD': '86002b10ca5ca9db506a57aed3b1da16c71baaa7b3024b50ea0a8fe266a6d311',
+        'HOST': 'ec2-18-210-214-86.compute-1.amazonaws.com',
+        'PORT': '5432',
     }
 }
 
