@@ -1,0 +1,1 @@
+web: gunicorn cursovai.wsgi --log-file -
