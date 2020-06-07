@@ -101,20 +101,18 @@ WSGI_APPLICATION = 'cursovai.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-import dj_database_url
-db_from_env = dj_database_url.config(conn_max_age=500)
-DATABASES['default'].update(db_from_env)
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': 'tour_operator',
-#         'USER': 'operator',
-#         'PASSWORD': '12345',
-#         'HOST': 'localhost',
-#         'PORT': '',
-#     }
-# }
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'tour_operator',
+        'USER': 'operator',
+        'PASSWORD': '12345',
+        'HOST': 'localhost',
+        'PORT': '',
+    }
+}
 
 
 # Password validation
