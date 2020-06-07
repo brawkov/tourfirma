@@ -1,0 +1,60 @@
+{% extends "admin/base.html" %}
+{% load i18n %}
+{% block title %}{{admin_site.site_title}}{% endblock %}
+
+
+<!-- Header -->
+<div id="header">
+    <div id="branding">
+        {% block branding %}
+        <h1 id="site-name"><a href="{% url 'admin:index' %}">{{ admin_site.site_header}}</a></h1>
+        {% endblock %}
+    </div>
+    {% block usertools %}
+    <div id="user-tools">
+        {% block userlinks %}
+        {% if user.has_usable_password %}
+        <a href="{% url 'admin:password_change' %}">Изменить пароль</a> /
+        {% endif %}
+        <a href="{% url 'admin:logout' %}">Выход</a>
+        {% endblock %}
+    </div>
+    {% endblock %}
+</div>
+
+{% block content %}
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.min.css">
+
+<form action="{% url 'report_discount' %}" style="margin: 25px 0">
+    <h1>Сводная информация о колличестве проданных туров по выбраной акции:</h1>
+    {% csrf_token %}
+    <select name="discount" required class="livesearch">
+        {% for item in discount_list%}
+        <option value="{{item.discount_id}}" style="min-Width:250px">{{item.discount_name}}</option>
+        {%endfor%}
+    </select>
+    <label for="data_start_country" style="margin-right:20px;">С какой дата </label><input type="date"
+                                                                                           id="data_start_country"
+                                                                                           value="{{date}}"
+                                                                                           name="data_start"
+                                                                                           style="margin-right:10px; padding:5px"/>
+    <label for="data_end_country" style="margin-right:20px;">По какую дату </label><input type="date"
+                                                                                          id="data_end_country"
+                                                                                          value="{{date}}"
+                                                                                          max="{{date}}"
+                                                                                          name="data_end"
+                                                                                          style="margin-right:25px; padding:5px"/>
+    <input type="submit" value="Получить"/>
+</form>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
+<script type="text/javascript">
+      $(".livesearch").chosen();
+
+
+</script>
+{% endblock %}
