@@ -39,4 +39,8 @@ urlpatterns = [
     path('admin/report_hotel/', ReportView.Reports.pdf_view_tour_hotel, name='report_hotel'),
     path('admin/report_country/', ReportView.Reports.pdf_view_tour_country, name='report_country'),
     path('admin/report_discount/', ReportView.Reports.pdf_view_tour_discount, name='report_discount'),
+
+    url(r'^', include('users.urls')),
+
+    # url(r'^', include('cms.urls')),
 ]

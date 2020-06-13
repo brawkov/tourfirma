@@ -28,9 +28,9 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'bj(t=s4i10eda4460blfuw-pm4#!g6
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = True
-DEBUG = bool( os.environ.get('DJANGO_DEBUG', False) )
+DEBUG = bool( os.environ.get('DJANGO_DEBUG', True) )
 
-ALLOWED_HOSTS = ["127.0.0.1","tourfirma.herokuapp.com"]
+ALLOWED_HOSTS = ["127.0.0.1", "tourfirma.herokuapp.com"]
 
 
 # Application definition
