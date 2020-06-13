@@ -40,7 +40,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.min.css">
 
 <form action="{% url 'report_all' %}" style="margin: 25px 0">
-    <h1>Сводная информация о колличестве проданных туров:</h1>
+    <h1>Сводная информация о количестве проданных туров:</h1>
     {% csrf_token %}
     <label for="data_start_all" style="margin-right:20px;">С какой дата </label><input type="date" id="data_start_all"
                                                                                        value="{{date}}"
@@ -56,7 +56,7 @@
 <hr/>
 
 <form action="{% url 'report_hotel' %}" style="margin: 25px 0">
-    <h1>Сводная информация о колличестве проданных туров в выбраный отель:</h1>
+    <h1>Сводная информация о количестве проданных туров в выбранный  отель:</h1>
     {% csrf_token %}
     <select name="hotel" required class="livesearch">
         {% for item in hotel_list%}
@@ -78,7 +78,7 @@
 <hr/>
 
 <form action="{% url 'report_country' %}" style="margin: 25px 0">
-    <h1>Сводная информация о колличестве проданных туров в выбраную страну:</h1>
+    <h1>Сводная информация о количестве проданных туров в выбранную  страну:</h1>
     {% csrf_token %}
     <select name="country" required class="livesearch">
         {% for item in country_list%}
@@ -102,7 +102,7 @@
 <hr/>
 
 <form action="{% url 'report_discount' %}" style="margin: 25px 0">
-    <h1>Сводная информация о колличестве проданных туров по выбраной акции:</h1>
+    <h1>Сводная информация о количестве проданных туров по выбранной акции:</h1>
     {% csrf_token %}
     <select name="discount" required class="livesearch">
         {% for item in discount_list%}

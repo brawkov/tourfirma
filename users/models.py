@@ -1,5 +1,6 @@
 from django.db import models
-from django.contrib.auth.models import AbstractUser
+from django.contrib.auth.models import AbstractUser, Permission
+from django.utils.translation import gettext_lazy as _
 
 
 class Employee(AbstractUser):
@@ -16,6 +17,7 @@ class Employee(AbstractUser):
 
     def __str__(self):
         return '%s %s %s' % (self.last_name, self.first_name, self.employee_patronymic)
+
 
     class Meta:
         db_table = 'Employee'

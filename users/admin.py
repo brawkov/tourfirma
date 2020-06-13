@@ -1,6 +1,7 @@
 from django.contrib import admin
 from django.contrib.admin import AdminSite
-from django.contrib.auth.admin import UserAdmin
+from django.contrib.auth.admin import UserAdmin, GroupAdmin
+from django.contrib.auth.models import *
 
 from .forms import CustomUserCreationForm, CustomUserChangeForm
 from .models import Employee
@@ -11,7 +12,6 @@ class MyAdminSite(AdminSite):
     site_header = 'Турфирма'
     index_title = ''
     site_url = ""
-
 
 class CustomUserAdmin(UserAdmin):
     add_form = CustomUserCreationForm
@@ -39,9 +39,14 @@ class CustomUserAdmin(UserAdmin):
             'fields': ('username', 'employee_passp_id', 'password1', 'password2'),
         }),
     )
+    search_fields = ('username', 'first_name', 'employee_patronymic', 'last_name', 'email')
+
+
 
 
 admin_site = MyAdminSite(name='myadmin')
 admin_site.register(Employee, CustomUserAdmin)
+admin_site.register(Group, GroupAdmin)
+
 
 # admin.site.register(Employee, CustomUserAdmin)

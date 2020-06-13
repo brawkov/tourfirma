@@ -113,7 +113,7 @@ class Tour(models.Model):
     tour_begin = models.DateField(default='', verbose_name='Дата начала тура')
     tour_end = models.DateField(default='', verbose_name='Дата окончания тура')
     tour_type_number = models.CharField(default='', max_length=20, verbose_name='Тип номера отеля')
-    tour_tourists = models.PositiveSmallIntegerField(default='', verbose_name='Колличество туристов')
+    tour_tourists = models.PositiveSmallIntegerField(default='', verbose_name='Кол. тур-ов')
     tour_cost = models.FloatField(default='', verbose_name='Стоимость')
 
     def __str__(self):
