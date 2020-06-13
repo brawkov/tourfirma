@@ -41,6 +41,8 @@ class Visa(models.Model):
     ]
     visa_quantity_trip = models.CharField(default='', choices=QUANTITY_TRIP, max_length=1,
                                           verbose_name='Кратность визы')
+    def __str__(self):
+        return '%s № %s' % (self.client_passp, self.visa_id)
 
     class Meta:
         db_table = 'visa'
