@@ -1,0 +1,18 @@
+{% extends "admin/index.html" %}
+
+{% comment %}{% block extrastyle %}
+    {{ block.super }}
+    {# --- custom styles --- #}
+{% endblock %}{% endcomment %}
+
+{% block content %}
+    {% if perms.sale.can_open_reports %}
+<!-- Добавил форму для перехода на страницу кнопки отчетов -->
+                <form action="{% url 'reports' %}" style=" padding-bottom: 10px">
+                   {% csrf_token %}
+                  <input   type="submit" value="Отчеты" />
+                </form>
+            {% endif %}
+
+    {{ block.super }}
+{% endblock %}

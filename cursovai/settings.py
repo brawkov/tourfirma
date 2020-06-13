@@ -36,6 +36,7 @@ ALLOWED_HOSTS = ["127.0.0.1", "tourfirma.herokuapp.com"]
 # Application definition
 
 INSTALLED_APPS = [
+    'report',
     'dal', 'dal_select2',
 
     'rangefilter',

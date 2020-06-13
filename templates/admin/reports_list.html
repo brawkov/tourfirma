@@ -30,6 +30,8 @@
 {% endblock %}
 
 {% block content %}
+    {{ block.super }}
+
 {% if error_message %}
 <div style="font-size: 20px; color: #D8000C;
             background-color: #FFBABA;

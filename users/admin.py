@@ -49,4 +49,4 @@ admin_site.register(Employee, CustomUserAdmin)
 admin_site.register(Group, GroupAdmin)
 
 
-# admin.site.register(Employee, CustomUserAdmin)
+admin.site.register(Employee, CustomUserAdmin)
