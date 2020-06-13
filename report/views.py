@@ -97,7 +97,7 @@ class Reports(TemplateView):
     def pdf_view_tour_hotel(request):
         pdf = HtmlPdf('P', 'mm', 'A4')
         pdf.add_page()
-        pdf.add_font('TimesNewRoman', '', '/home/curs/Загрузки/TimesNewRoman.ttf', uni=True)
+        pdf.add_font('TimesNewRoman', '', 'templates/font/TimesNewRoman.ttf', uni=True)
         pdf.set_font('TimesNewRoman', '', 16)
         date_start = request.GET['data_start']
         date_end = request.GET['data_end']
@@ -171,7 +171,7 @@ class Reports(TemplateView):
     def pdf_view_tour_country(request):
         pdf = HtmlPdf('P', 'mm', 'A4')
         pdf.add_page()
-        pdf.add_font('TimesNewRoman', '', '/home/curs/Загрузки/TimesNewRoman.ttf', uni=True)
+        pdf.add_font('TimesNewRoman', '', 'templates/font/TimesNewRoman.ttf', uni=True)
         pdf.set_font('TimesNewRoman', '', 16)
         date_start = request.GET['data_start']
         date_end = request.GET['data_end']
@@ -246,7 +246,7 @@ class Reports(TemplateView):
     def pdf_view_tour_discount(request):
         pdf = HtmlPdf('P', 'mm', 'A4')
         pdf.add_page()
-        pdf.add_font('TimesNewRoman', '', '/home/curs/Загрузки/TimesNewRoman.ttf', uni=True)
+        pdf.add_font('TimesNewRoman', '', 'templates/font/TimesNewRoman.ttf', uni=True)
         pdf.set_font('TimesNewRoman', '', 16)
         date_start = request.GET['data_start']
         date_end = request.GET['data_end']
